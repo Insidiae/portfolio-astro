@@ -1,0 +1,153 @@
+---
+const ALL_TAGS = [
+	"legacy",
+	"html",
+	"bootstrap",
+	"css",
+	"sass",
+	"javascript",
+	"typescript",
+	"jquery",
+	"react",
+	"react-native",
+	"remix",
+	"redux",
+	"typescript",
+	"ajax",
+	"d3",
+	"mongodb",
+	"node",
+	"express",
+	"nestjs",
+	"python",
+	"ml",
+	"scikit-learn",
+	"tensorflow",
+] as const;
+type AllowedTags = typeof ALL_TAGS;
+export type TagType = AllowedTags[number];
+
+export interface Props {
+	type: TagType;
+	name: string;
+}
+
+const { type, name } = Astro.props;
+---
+
+<span class={`tag tag--${type}`}>{name}</span>
+
+<style>
+	.tag {
+		display: inline-block;
+		padding: 4px 8px;
+		border-radius: 9999px;
+		background-color: var(--tag-background-color, hsl(0deg 0% 83%));
+		color: var(--tag-color, hsl(0deg 0% 100%));
+		font-size: 0.75rem;
+		font-weight: 600;
+		/* line-height: 1.6; */
+		text-transform: uppercase;
+	}
+
+	.tag--legacy {
+		--tag-background-color: hsl(0deg 0% 83%);
+		--tag-color: hsl(0deg 0% 17%);
+	}
+
+	.tag--html {
+		--tag-background-color: #f06529;
+		--tag-color: #ebebeb;
+	}
+
+	.tag--bootstrap {
+		--tag-background-color: #563d7c;
+		--tag-color: #ffffff;
+	}
+
+	.tag--css {
+		--tag-background-color: #2965f1;
+		--tag-color: #ebebeb;
+	}
+
+	.tag--sass {
+		--tag-background-color: #cc6699;
+		--tag-color: #ffffff;
+	}
+
+	.tag--javascript {
+		--tag-background-color: #f7df1e;
+		--tag-color: #000000;
+	}
+
+	.tag--jquery {
+		--tag-background-color: #333333;
+		--tag-color: #ffffff;
+	}
+
+	.tag--react,
+	.tag--react-native {
+		--tag-background-color: #282c34;
+		--tag-color: #61dafb;
+	}
+
+	.tag--remix {
+		--tag-background-color: #121212;
+		--tag-color: #ffffff;
+	}
+
+	.tag--redux {
+		--tag-background-color: #764abc;
+		--tag-color: #ffffff;
+	}
+
+	.tag--typescript {
+		--tag-background-color: #3178c6;
+		--tag-color: #faf9f8;
+	}
+
+	.tag--ajax {
+		--tag-color: #4a98ce;
+	}
+
+	.tag--d3 {
+		--tag-background-color: #555555;
+		--tag-color: #f9a03c;
+	}
+
+	.tag--mongodb {
+		--tag-color: #3fa037;
+	}
+
+	.tag--node {
+		--tag-background-color: #66cc33;
+		--tag-color: #333333;
+	}
+
+	.tag--express {
+		--tag-color: #333333;
+	}
+
+	.tag--nestjs {
+		--tag-background-color: #ea2845;
+		--tag-color: #ffffff;
+	}
+
+	.tag--python {
+		--tag-background-color: #ffde57;
+		--tag-color: #4584b6;
+	}
+
+	.tag--ml {
+		--tag-background-color: #150458;
+	}
+
+	.tag--scikit-learn {
+		--tag-background-color: #f7931e;
+	}
+
+	.tag--tensorflow {
+		--tag-background-color: #e6e6e6;
+		--tag-color: #ff6f00;
+	}
+</style>

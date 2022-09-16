@@ -1,6 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import SkillList from "../components/SkillList.astro";
+import ProjectList from "../components/ProjectList.astro";
+
+import featuredProjects from "../data/featured_projects";
+
+import type { ProjectItem } from "../components/Project.astro";
 ---
 
 <Layout
@@ -31,6 +36,18 @@ import SkillList from "../components/SkillList.astro";
 		</section>
 
 		<SkillList />
+
+		<section id="projects" class="section-projects">
+			<div class="u-center-text u-margin-bottom--md">
+				<h2 class="heading-secondary">Featured Projects</h2>
+			</div>
+
+			<ProjectList projects={featuredProjects as ProjectItem[]} />
+
+			<div class="u-center-text u-margin-top--lg u-margin-bottom--md">
+				<a href="/projects" class="btn btn--large">View More Projects &rarr;</a>
+			</div>
+		</section>
 	</main>
 </Layout>
 
@@ -105,6 +122,14 @@ import SkillList from "../components/SkillList.astro";
 
 		.hero__img {
 			width: 100%;
+		}
+
+		.section-skills {
+			padding: 64px 64px;
+		}
+
+		.section-projects {
+			padding: 64px 64px;
 		}
 	}
 </style>

@@ -1,0 +1,97 @@
+---
+import type { TagType } from "./Tag.astro";
+import Tag from "./Tag.astro";
+
+export interface ProjectItem {
+	title: string;
+	tags: {
+		type: TagType;
+		name: string;
+	}[];
+	thumbnailSrc: string;
+	thumbnailAlt: string;
+	thumbnailAnchor?: "top" | "center" | "bottom" | "left" | "right";
+	content: string;
+	cta?: string;
+	href: string;
+}
+
+export interface Props {
+	project: ProjectItem;
+}
+
+const { project } = Astro.props;
+---
+
+<article class="project project-tile">
+	<div class="project__img-box">
+		<img
+			loading="lazy"
+			class="project__img"
+			src={project.thumbnailSrc}
+			alt={project.thumbnailAlt}
+			style={project.thumbnailAnchor
+				? `object-position: ${project.thumbnailAnchor}`
+				: undefined}
+		/>
+	</div>
+	<div class="project__details">
+		<h3 class="project__title">{project.title}</h3>
+		<div class="project__tags">
+			{project.tags.map((tag) => <Tag type={tag.type} name={tag.name} />)}
+		</div>
+		<p class="project__description" set:html={project.content}></p>
+		<div class="project__link">
+			<a
+				href={project.href}
+				class="btn"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{project.cta ?? "View Project"}
+			</a>
+		</div>
+	</div>
+</article>
+
+<style>
+	.project {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		flex: 0 0 300px;
+		border-radius: 8px;
+		/* box-shadow: 0 24px 48px hsl(0deg 0% 0% / 0.075); */
+		box-shadow: 0 24px 48px hsl(0deg 0% 0% / 0.1);
+	}
+
+	.project__details {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		flex: 1;
+		padding: 0 24px 16px;
+	}
+
+	.project__img {
+		width: 100%;
+		border-radius: 8px 8px 0 0;
+		aspect-ratio: 16 / 9;
+		object-fit: cover;
+	}
+
+	.project__title {
+		font-size: 1.25rem;
+		line-height: 1.1;
+	}
+	.project__tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 4px;
+	}
+
+	.project__link {
+		margin-top: auto;
+		text-align: center;
+	}
+</style>

@@ -140,6 +140,17 @@ const profileImageAlt = "KB Ruado's Github Profile image";
 				--color-primary-light-2: hsl(128deg 76% 90%);
 			}
 
+			body {
+				overflow-x: hidden;
+			}
+
+			@media (prefers-reduced-motion: no-preference) {
+				html,
+				body {
+					scroll-behavior: smooth;
+				}
+			}
+
 			/* 
 			*=========================*
 			*       TYPOGRAPHY        *
@@ -212,6 +223,31 @@ const profileImageAlt = "KB Ruado's Github Profile image";
 			*        COMPONENTS       *
 			*=========================*
 			*/
+
+			.btn,
+			.btn:link,
+			.btn:visited {
+				display: inline-block;
+				width: fit-content;
+				padding: 8px 16px;
+				border-radius: 8px;
+				color: hsl(0deg 0% 100%);
+				background-color: var(--color-primary);
+				text-decoration: none;
+				transition: background-color 500ms;
+			}
+
+			.btn--large,
+			.btn--large:link,
+			.btn--large:visited {
+				padding: 16px 32px;
+				border-radius: 9999px;
+			}
+
+			.btn:hover {
+				background-color: var(--color-primary-light);
+				transition: background-color 250ms;
+			}
 
 			.card-list {
 				display: flex;
