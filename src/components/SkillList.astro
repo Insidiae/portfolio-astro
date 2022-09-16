@@ -1,0 +1,20 @@
+---
+import skills from "../data/skills.json";
+import Skill from "./Skill.astro";
+---
+
+<section id="skills" class="section-skills">
+	<div class="u-center-text u-margin-bottom--md">
+		<h2 class="heading-secondary">Languages and Tools</h2>
+	</div>
+
+	<div class="card-list">
+		{skills.map((skill) => <Skill skill={skill} />)}
+	</div>
+</section>
+
+<style>
+	.section-skills {
+		padding: 64px 16px;
+	}
+</style>

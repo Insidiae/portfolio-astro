@@ -138,15 +138,6 @@ const profileImageAlt = "KB Ruado's Github Profile image";
 				--color-primary: hsl(130deg 57% 56%);
 				--color-primary-light: hsl(130deg 61% 64%);
 				--color-primary-light-2: hsl(128deg 76% 90%);
-
-				/* TODO: replace placeholders with portfolio elements */
-				--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-				--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-				--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-				--color-text: hsl(12, 5%, 4%);
-				--color-bg: hsl(10, 21%, 95%);
-				--color-border: hsl(17, 24%, 90%);
 			}
 
 			/* 
@@ -189,26 +180,55 @@ const profileImageAlt = "KB Ruado's Github Profile image";
 			}
 
 			.heading-tertiary {
-				margin-bottom: 32px;
-				font-size: 1.875rem;
+				font-size: 1.17rem;
 				font-weight: 700;
 				line-height: 1.1;
 			}
 
-			/* TODO: replace placeholders with portfolio elements */
-			h1 {
-				font-size: var(--font-size-xl);
+			/* 
+			*=========================*
+			*         UTILITY         *
+			*=========================*
+			*/
+
+			.u-center-text {
+				text-align: center !important;
 			}
 
-			h2 {
-				font-size: var(--font-size-lg);
+			.u-margin-top--sm {
+				margin-top: 16px;
 			}
 
-			code {
-				font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-					DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+			.u-margin-top--lg {
+				margin-top: 64px;
+			}
+
+			.u-margin-bottom--md {
+				margin-bottom: 32px;
+			}
+
+			/* 
+			*=========================*
+			*        COMPONENTS       *
+			*=========================*
+			*/
+
+			.card-list {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 48px;
 			}
 		</style>
+
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+		></script>
 	</body>
 </html>
 

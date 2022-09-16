@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+import SkillList from "../components/SkillList.astro";
 ---
 
 <Layout
@@ -8,93 +8,104 @@ import Card from "../components/Card.astro";
 	description="KB Ruado (@Insidiae) — Online course enthusiast"
 >
 	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Chat"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
+		<section id="welcome-section" class="section-hero">
+			<div class="hero">
+				<div class="hero__text-box">
+					<h1 class="heading-primary">Hello There.</h1>
+					<p class="hero__description">
+						I'm an online course enthusiast working to improve my skills and
+						level up my career, currently exploring a bunch of technologies to
+						use for my university thesis next year. In my free time I binge
+						online courses and build lots of fun and interesting projects.
+					</p>
+				</div>
+
+				<div class="hero__img-box">
+					<img
+						src="portfolio-assets/img/hero-img.png"
+						alt=""
+						class="hero__img"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<SkillList />
 	</main>
 </Layout>
 
 <style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	.section-hero {
+		padding: 48px 0 96px;
+		background-color: var(--color-primary-light-2);
 	}
 
-	h1 {
-		margin: 2rem 0;
-	}
-
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-
-	.link-card-grid {
+	.hero {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
+		grid-template-columns: 1fr;
+		gap: 24px;
+		align-items: center;
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+
+	.hero__text-box {
+		text-align: center;
+	}
+
+	.hero__description {
+		font-size: 1rem;
+	}
+
+	.hero__img-box {
+		grid-row: 1;
+		text-align: center;
+	}
+
+	.hero__img {
+		display: inline-block;
+		width: 80%;
+	}
+
+	/* MOBILE AND UP: >=560px */
+	@media (min-width: 35em) {
+		.hero {
+			padding: 48px 64px;
+		}
+
+		.hero__img {
+			width: 60%;
+		}
+	}
+
+	/* TABLET AND UP: >=880px */
+	@media (min-width: 55em) {
+		.section-hero {
+			padding: 96px 0;
+		}
+
+		.hero {
+			grid-template-columns: 1fr 1fr;
+			padding: 0 32px;
+		}
+
+		.hero__text-box,
+		.hero__description {
+			text-align: revert;
+		}
+
+		.hero__description {
+			font-size: 1.125rem;
+		}
+
+		.hero__img-box {
+			grid-row: revert;
+		}
+
+		.hero__img {
+			width: 100%;
+		}
 	}
 </style>
 

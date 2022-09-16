@@ -1,0 +1,78 @@
+---
+export interface Props {
+	skill: {
+		title: string;
+		icon: string;
+		items: {
+			name: string;
+			src: string;
+		}[];
+	};
+}
+
+const { skill } = Astro.props;
+---
+
+<article class="skill">
+	<div class="skill__heading">
+		<span class="skill__icon-wrapper">
+			<ion-icon class="skill__icon" name={skill.icon} />
+		</span>
+		<h3 class="heading-tertiary">{skill.title}</h3>
+	</div>
+	<div class="skill__list">
+		{
+			skill.items.map((item) => (
+				<img
+					loading="lazy"
+					src={item.src}
+					title={item.name}
+					alt={item.name}
+					width="40"
+					height="40"
+				/>
+			))
+		}
+	</div>
+</article>
+
+<style>
+	.skill {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		flex: 0 0 300px;
+		padding: 16px;
+		border-radius: 8px;
+		/* box-shadow: 0 24px 48px hsl(0deg 0% 0% / 0.075); */
+		box-shadow: 0 24px 48px hsl(0deg 0% 0% / 0.1);
+	}
+
+	.skill__heading {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+	}
+
+	.skill__icon-wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--color-primary-light-2);
+		border-radius: 50%;
+		width: 3rem;
+		height: 3rem;
+	}
+
+	.skill__icon {
+		position: relative;
+		font-size: 2rem;
+		color: var(--color-primary);
+	}
+
+	.skill__list {
+		display: flex;
+		gap: 8px;
+		flex-wrap: wrap;
+	}
+</style>
