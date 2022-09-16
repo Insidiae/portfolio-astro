@@ -1,0 +1,247 @@
+---
+import VisuallyHidden from "./VisuallyHidden.astro";
+---
+
+<header class="header">
+	<div class="profile">
+		<a
+			id="profile-link"
+			class="profile__link"
+			href="https://github.com/Insidiae/"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			<VisuallyHidden content="Visit KB Ruado's Github Profile" />
+			<img
+				src="https://avatars.githubusercontent.com/u/28495550"
+				alt="KB Ruado's Github Profile Picture"
+				class="profile__picture"
+			/>
+			<span class="profile__name"> KB Ruado (@Insidiae)</span>
+		</a>
+	</div>
+
+	<button
+		class="header__nav-toggle"
+		aria-controls="primary-navigation"
+		aria-expanded="false"
+	>
+		<VisuallyHidden content="Menu" />
+	</button>
+
+	<nav id="navbar">
+		<ul id="primary-navigation" class="header__nav" data-visible="false">
+			<li>
+				<a href="/" class="header__nav__link">
+					<span aria-hidden="true">00</span> Home
+				</a>
+			</li>
+			<li>
+				<a href="/#skills" class="header__nav__link">
+					<span aria-hidden="true">01</span> Skills
+				</a>
+			</li>
+			<li>
+				<a href="/projects" class="header__nav__link">
+					<span aria-hidden="true">02</span> Projects
+				</a>
+			</li>
+			<li>
+				<a href="/#contact" class="header__nav__link">
+					<span aria-hidden="true">03</span> Contact
+				</a>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<script>
+	const primaryNav = document.getElementById(
+		"primary-navigation"
+	) as HTMLElement;
+	const navToggle = document.querySelector(
+		".header__nav-toggle"
+	) as HTMLElement;
+
+	navToggle.addEventListener("click", () => {
+		const visibility = primaryNav.dataset.visible;
+
+		primaryNav.dataset.visible = visibility === "false" ? "true" : "false";
+		navToggle.setAttribute(
+			"aria-expanded",
+			visibility === "false" ? "true" : "false"
+		);
+	});
+</script>
+
+<style>
+	/* 
+		* Credits: Kevin Powell's Responsive navbar tutorial using HTML CSS & JS
+		? https://www.youtube.com/watch?v=HbBMp6yUXO
+	*/
+
+	.max-width-wrapper {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 32px;
+	}
+
+	.header {
+		position: fixed;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 16px;
+		width: 100%;
+		z-index: 1;
+	}
+
+	.profile {
+		margin: 32px;
+	}
+
+	.profile__link {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+		color: white;
+		font-size: 1.25rem;
+		font-weight: 423;
+		text-shadow: -1px -1px hsl(0deg 0% 0%), 1px -1px hsl(0deg 0% 0%),
+			-1px 1px hsl(0deg 0% 0%), 1px 1px hsl(0deg 0% 0%);
+		text-decoration: none;
+	}
+
+	.profile__picture {
+		border: 2px solid hsl(132deg 52% 35%);
+		border-radius: 50%;
+		width: 50px;
+		aspect-ratio: 1 / 1;
+	}
+
+	.profile__name {
+		display: none;
+	}
+
+	.header__nav-toggle {
+		display: none;
+	}
+
+	.header__nav {
+		display: flex;
+		gap: 16px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		background-color: hsl(85deg 79% 40% / 0.75);
+	}
+
+	.header__nav__link {
+		color: white;
+	}
+
+	@supports (backdrop-filter: blur(16px)) {
+		.header__nav {
+			background-color: hsl(85deg 79% 40% / 0.5);
+			backdrop-filter: blur(16px);
+		}
+	}
+
+	.header__nav__link {
+		text-decoration: none;
+	}
+
+	.header__nav__link span {
+		font-weight: 700;
+		margin-inline-end: 0.75em;
+	}
+
+	/* MOBILE AND BELOW: <560px */
+	/*
+		? We use some max-width media queries for the header nav
+		? so we don't have to overwrite a bunch of styles later
+	*/
+	@media (max-width: 34.999em) {
+		.header__nav {
+			position: fixed;
+			/* Fancy modern syntax for top/right/bottom/left */
+			inset: 0 0 0 30%;
+
+			flex-direction: column;
+			gap: 32px;
+			padding: min(320px, 15vh) 32px;
+			will-change: transform;
+			transform: translateX(100%);
+			transition: transform 250ms ease-in;
+
+			z-index: 2;
+		}
+
+		.header__nav[data-visible="true"],
+		/* Quickly show nav when links are focused via keyboard */
+		.header__nav[data-visible="false"]:focus-within {
+			transform: translateX(0%);
+			transition: transform 400ms ease-out;
+		}
+
+		.header__nav-toggle {
+			display: block;
+			position: fixed;
+			width: 32px;
+			aspect-ratio: 1 / 1;
+			top: 32px;
+			right: 32px;
+			border: none;
+			background: transparent;
+			background-image: url(portfolio-assets/img/icon-hamburger.svg);
+			background-repeat: no-repeat;
+			background-position: center;
+
+			/* 
+				! This is a special case indicating that this element
+				! should stay on top of everything else at all times.
+				* Consider creating separate stacking contexts
+				* for other content that need to overlap:
+				? https://www.joshwcomeau.com/css/stacking-contexts/#airtight-abstractions-with-isolation
+			*/
+			z-index: 9999;
+		}
+
+		.header__nav-toggle[aria-expanded="true"] {
+			background-image: url(portfolio-assets/img/icon-close.svg);
+		}
+	}
+
+	/* TABLET ONLY: 560px-879px */
+	/* 
+		? Hide the index numbers on tablet devices
+	*/
+	@media (min-width: 35em) and (max-width: 54.999em) {
+		.header__nav__link span {
+			display: none;
+		}
+	}
+
+	/* MOBILE AND UP: >=560px */
+	@media (min-width: 35em) {
+		.header__nav {
+			gap: clamp(24px, 5vw, 48px);
+			padding: 32px clamp(48px, 7vw, 160px);
+		}
+
+		.hero {
+			padding: 48px 64px;
+		}
+
+		.hero__img {
+			width: 60%;
+		}
+	}
+
+	/* TABLET AND UP: >=880px */
+	@media (min-width: 55em) {
+		.profile__name {
+			display: revert;
+		}
+	}
+</style>

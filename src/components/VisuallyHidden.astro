@@ -1,0 +1,27 @@
+---
+export interface Props {
+	content: string;
+}
+
+const { content } = Astro.props;
+---
+
+<span class="visually-hidden">{content}</span>
+
+<style>
+	/* 
+		* Hide content for sighted users while still allowing
+		* assistive technologies to discover and interact
+		* with the content
+		? https://www.scottohara.me/blog/2017/04/14/inclusively-hidden.html
+	*/
+	.visually-hidden:not(:focus):not(:active) {
+		clip: rect(0 0 0 0);
+		clip-path: inset(50%);
+		height: 1px;
+		overflow: hidden;
+		position: absolute;
+		white-space: nowrap;
+		width: 1px;
+	}
+</style>
