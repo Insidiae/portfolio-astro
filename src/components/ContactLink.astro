@@ -1,0 +1,54 @@
+---
+import VisuallyHidden from "./VisuallyHidden.astro";
+
+export interface Props {
+	alt: string;
+	icon: string;
+	href: string;
+}
+
+const { alt, icon, href } = Astro.props;
+---
+
+<a class="contact" href={href} target="_blank" rel="noopener noreferrer">
+	<VisuallyHidden content={alt} />
+	<ion-icon name={icon} class="contact__icon" />
+</a>
+
+<style>
+	.contact-list {
+		display: flex;
+		justify-content: center;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+
+	.contact,
+	.contact:link,
+	.contact:visited {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex: 0 0 100px;
+		aspect-ratio: 1 / 1;
+		border: 3px solid var(--color-primary);
+		border-radius: 50%;
+		transition: background-color 500ms;
+	}
+
+	.contact__icon {
+		font-size: 3rem;
+		color: var(--color-primary);
+		transition: color 500ms;
+	}
+
+	.contact:hover {
+		transition: background-color 250ms;
+		background-color: var(--color-primary);
+	}
+
+	.contact:hover .contact__icon {
+		color: white;
+		transition: color 250ms;
+	}
+</style>

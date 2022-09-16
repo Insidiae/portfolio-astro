@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import SkillList from "../components/SkillList.astro";
 import ProjectList from "../components/ProjectList.astro";
+import ContactDetails from "../components/ContactDetails.astro";
 
 import featuredProjects from "../data/featured_projects";
 
@@ -48,6 +49,14 @@ import type { ProjectItem } from "../components/Project.astro";
 				<a href="/projects" class="btn btn--large">View More Projects &rarr;</a>
 			</div>
 		</section>
+
+		<section id="contact" class="section-contact">
+			<div class="u-center-text u-margin-bottom--md">
+				<h2 class="heading-secondary">My Social Media Links</h2>
+			</div>
+
+			<ContactDetails />
+		</section>
 	</main>
 </Layout>
 
@@ -55,6 +64,14 @@ import type { ProjectItem } from "../components/Project.astro";
 	.section-hero {
 		padding: 48px 0 96px;
 		background-color: var(--color-primary-light-2);
+	}
+
+	.section-projects {
+		padding: 64px 16px;
+	}
+
+	.section-contact {
+		padding: 64px 16px;
 	}
 
 	.hero {
@@ -124,11 +141,11 @@ import type { ProjectItem } from "../components/Project.astro";
 			width: 100%;
 		}
 
-		.section-skills {
+		.section-projects {
 			padding: 64px 64px;
 		}
 
-		.section-projects {
+		.section-contact {
 			padding: 64px 64px;
 		}
 	}

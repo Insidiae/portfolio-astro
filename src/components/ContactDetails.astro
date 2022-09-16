@@ -1,0 +1,22 @@
+---
+import ContactLink from "./ContactLink.astro";
+
+import contactData from "../data/contact_data.json";
+---
+
+<div class="contact-list">
+	{
+		contactData.map(({ href, alt, icon }) => (
+			<ContactLink href={href} alt={alt} icon={icon} />
+		))
+	}
+</div>
+
+<style>
+	.contact-list {
+		display: flex;
+		justify-content: center;
+		gap: 16px;
+		flex-wrap: wrap;
+	}
+</style>

@@ -1,0 +1,27 @@
+[
+	{
+		"href": "https://github.com/Insidiae/",
+		"alt": "Visit KB Ruado's Github profile",
+		"icon": "logo-github"
+	},
+	{
+		"href": "https://www.linkedin.com/in/insidiae423/",
+		"alt": "Visit KB Ruado's Linkedin profile",
+		"icon": "logo-linkedin"
+	},
+	{
+		"href": "https://twitter.com/insidiae423",
+		"alt": "Visit KB Ruado's Twitter profile",
+		"icon": "logo-twitter"
+	},
+	{
+		"href": "https://www.facebook.com/Insidiae423/",
+		"alt": "Visit KB Ruado's Facebook profile",
+		"icon": "logo-facebook"
+	},
+	{
+		"href": "mailto:ruado.kb@gmail.com",
+		"alt": "Send an email to KB Ruado",
+		"icon": "mail-sharp"
+	}
+]
