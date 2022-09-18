@@ -50,16 +50,20 @@
 		"icon": "thumbs-up-sharp",
 		"items": [
 			{
-				"name": "NestJS",
-				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+				"name": "Remix",
+				"src": "https://raw.githubusercontent.com/bestofjs/bestofjs-webui/master/public/logos/remix.svg"
 			},
 			{
 				"name": "Redux",
 				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg"
 			},
 			{
-				"name": "Remix",
-				"src": "https://raw.githubusercontent.com/bestofjs/bestofjs-webui/master/public/logos/remix.svg"
+				"name": "NestJS",
+				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg"
+			},
+			{
+				"name": "Astro",
+				"src": "https://raw.githubusercontent.com/bestofjs/bestofjs-webui/master/public/logos/astro.svg"
 			},
 			{
 				"name": "Tailwind",
