@@ -1,0 +1,52 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ProjectList from "../components/ProjectList.astro";
+
+import freeCodeCampProjects from "../data/freecodecamp_projects";
+import wdbcProjects from "../data/wdbc_projects";
+import otherProjects from "../data/other_projects";
+---
+
+<Layout
+	title="Projects | KB Ruado (@Insidiae)"
+	description="Projects built by KB Ruado (@Insidiae)"
+>
+	<main>
+		<section class="section-projects">
+			<div class="u-center-text u-margin-bottom--md">
+				<h1 class="heading-secondary">freeCodeCamp Projects</h1>
+			</div>
+
+			<ProjectList projects={freeCodeCampProjects} />
+
+			<div class="u-center-text u-margin-top--lg u-margin-bottom--md">
+				<h1 class="heading-secondary">The Web Developer Bootcamp</h1>
+			</div>
+
+			<ProjectList projects={wdbcProjects} />
+
+			<div class="u-center-text u-margin-top--lg u-margin-bottom--md">
+				<h1 class="heading-secondary">More Online Course Activities</h1>
+			</div>
+
+			<ProjectList projects={otherProjects} />
+		</section>
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding-top: 64px;
+	}
+
+	.section-projects {
+		padding: 64px 16px;
+	}
+
+	/* TABLET AND UP: >=880px */
+	@media (min-width: 55em) {
+		.section-projects {
+			padding: 64px 64px;
+		}
+	}
+</style>

@@ -5,8 +5,6 @@ import ProjectList from "../components/ProjectList.astro";
 import ContactDetails from "../components/ContactDetails.astro";
 
 import featuredProjects from "../data/featured_projects";
-
-import type { ProjectItem } from "../components/Project.astro";
 ---
 
 <Layout
@@ -43,7 +41,7 @@ import type { ProjectItem } from "../components/Project.astro";
 				<h2 class="heading-secondary">Featured Projects</h2>
 			</div>
 
-			<ProjectList projects={featuredProjects as ProjectItem[]} />
+			<ProjectList projects={featuredProjects} />
 
 			<div class="u-center-text u-margin-top--lg u-margin-bottom--md">
 				<a href="/projects" class="btn btn--large">View More Projects &rarr;</a>
