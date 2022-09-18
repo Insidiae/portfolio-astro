@@ -1,6 +1,6 @@
-import type { ProjectItem } from "../components/Project.astro";
+import type { Project } from "../components/ProjectCard.astro";
 
-const otherProjects: ProjectItem[] = [
+const otherProjects: Project[] = [
 	{
 		title: "#JavaScript30 Challenge",
 		tags: [

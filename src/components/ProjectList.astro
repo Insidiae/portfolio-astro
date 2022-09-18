@@ -1,14 +1,15 @@
 ---
-import Project from "./Project.astro";
-import type { ProjectItem } from "./Project.astro";
+import ProjectCard from "./ProjectCard.astro";
+
+import type { Project } from "./ProjectCard.astro";
 
 export interface Props {
-	projects: ProjectItem[];
+	projects: Project[];
 }
 
 const { projects } = Astro.props;
 ---
 
 <div class="projects card-list">
-	{projects.map((project) => <Project project={project} />)}
+	{projects.map((project) => <ProjectCard project={project} />)}
 </div>

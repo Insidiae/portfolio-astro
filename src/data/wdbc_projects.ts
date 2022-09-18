@@ -1,6 +1,6 @@
-import type { ProjectItem } from "../components/Project.astro";
+import type { Project } from "../components/ProjectCard.astro";
 
-const wdbcProjects: ProjectItem[] = [
+const wdbcProjects: Project[] = [
 	{
 		title: "Course Exercises",
 		tags: [

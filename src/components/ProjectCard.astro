@@ -2,7 +2,7 @@
 import type { TagType } from "./Tag.astro";
 import Tag from "./Tag.astro";
 
-export interface ProjectItem {
+export interface Project {
 	title: string;
 	tags: {
 		type: TagType;
@@ -17,7 +17,7 @@ export interface ProjectItem {
 }
 
 export interface Props {
-	project: ProjectItem;
+	project: Project;
 }
 
 const { project } = Astro.props;

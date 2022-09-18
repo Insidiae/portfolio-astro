@@ -1,6 +1,6 @@
-import type { ProjectItem } from "../components/Project.astro";
+import type { Project } from "../components/ProjectCard.astro";
 
-const featuredProjects: ProjectItem[] = [
+const featuredProjects: Project[] = [
 	{
 		title: "Epic React Checkpoints",
 		tags: [

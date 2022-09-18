@@ -1,6 +1,6 @@
-import type { ProjectItem } from "../components/Project.astro";
+import type { Project } from "../components/ProjectCard.astro";
 
-const freeCodeCampProjects: ProjectItem[] = [
+const freeCodeCampProjects: Project[] = [
 	{
 		title: "SiIvaGunner Tribute Page",
 		tags: [
