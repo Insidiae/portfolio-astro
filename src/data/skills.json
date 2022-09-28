@@ -120,6 +120,10 @@
 				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-plain.svg"
 			},
 			{
+				"name": "PyTorch",
+				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+			},
+			{
 				"name": "GraphQL",
 				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg"
 			},
@@ -168,10 +172,6 @@
 			{
 				"name": "Storybook",
 				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/storybook/storybook-original.svg"
-			},
-			{
-				"name": "PyTorch",
-				"src": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
 			},
 			{
 				"name": "PostgreSQL",

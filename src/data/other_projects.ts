@@ -291,6 +291,22 @@ const otherProjects: Project[] = [
 			'Course project from the <a href="https://zerotomastery.io/courses/learn-react/" target="_blank" rel="noopener noreferrer">Zero To Mastery Complete React Developer course</a>, remade using <a href="https://remix.run/" target="_blank" rel="noopener noreferrer">Remix.run</a>.',
 		href: "https://github.com/Insidiae/crwn-clothing-remix",
 	},
+	{
+		title: "Rust Zero To Mastery",
+		tags: [
+			{
+				type: "rust",
+				name: "Rust",
+			},
+		],
+		thumbnailSrc: "portfolio-assets/img/ztm-rust.png",
+		thumbnailAlt:
+			"Thumbnail image from Zero To Mastery's Rust Programming: The Complete Developer's Guide",
+		content:
+			'Course exercises and projects from Zero To Mastery\'s <a href="https://zerotomastery.io/courses/learn-rust/" target="_blank" rel="noopener noreferrer">Rust Programming: The Complete Developer\'s Guide</a>.',
+		cta: "View Exercises",
+		href: "https://github.com/Insidiae/ztm-rust",
+	},
 ];
 
 export default otherProjects;
