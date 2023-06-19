@@ -12,6 +12,7 @@ const ALL_TAGS = [
 	"react-native",
 	"remix",
 	"redux",
+	"threejs",
 	"typescript",
 	"ajax",
 	"d3",
@@ -102,6 +103,11 @@ const { type, name } = Astro.props;
 		--tag-color: #ffffff;
 	}
 
+	.tag--threejs {
+		--tag-background-color: #f3f3f3;
+		--tag-color: #333;
+	}
+
 	.tag--typescript {
 		--tag-background-color: #3178c6;
 		--tag-color: #faf9f8;
@@ -156,3 +162,4 @@ const { type, name } = Astro.props;
 		--tag-background-color: #f46623;
 	}
 </style>
+

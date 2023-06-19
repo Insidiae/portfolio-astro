@@ -48,6 +48,42 @@ const otherProjects: Project[] = [
 		href: "https://insidiae.github.io/beginner-javascript-projects/index.html",
 	},
 	{
+		title: "Total TypeScript Checkpoints",
+		tags: [
+			{
+				type: "typescript",
+				name: "TS",
+			},
+		],
+		thumbnailSrc: "https://www.totaltypescript.com/card@2x.png",
+		thumbnailAlt: "Cover image of the Total TypeScript course",
+		content: `Workshop solutions and challenges from Matt Pocock's <a href="https://www.totaltypescript.com" target="_blank" rel="noopener noreferrer">Total TypeScript</a> course.`,
+		cta: "View Exercises",
+		href: "https://github.com/Insidiae/total-typescript-checkpoints",
+	},
+	{
+		title: "Three.js Journey Checkpoints",
+		tags: [
+			{
+				type: "typescript",
+				name: "TS",
+			},
+			{
+				type: "threejs",
+				name: "Three.js",
+			},
+			{
+				type: "react",
+				name: "React",
+			},
+		],
+		thumbnailSrc: "https://threejs-journey.com/assets/social/share-image.png",
+		thumbnailAlt: "Cover image of the Three.js Journey course",
+		content: `My solution code from Bruno Simon's <a href="https://www.totaltypescript.com" target="_blank" rel="noopener noreferrer">Three.js Journey</a> course, updated to use TypeScript and React Three Fiber.`,
+		cta: "View Exercises",
+		href: "https://github.com/Insidiae/threejs-journey-checkpoints",
+	},
+	{
 		title: "JavaScript Algorithms and Data Structures",
 		tags: [
 			{
@@ -310,3 +346,4 @@ const otherProjects: Project[] = [
 ];
 
 export default otherProjects;
+
